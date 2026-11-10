@@ -1,4 +1,4 @@
-const VERSION = 'leia-v2';
+const VERSION = 'leia-v3';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const scopeUrl = new URL(self.registration.scope);
@@ -42,3 +42,4 @@ self.addEventListener('fetch', event => {
     return cached || update.catch(() => new Response('', { status: 503, statusText: 'Offline' }));
   }));
 });
+
