@@ -8,12 +8,12 @@ if (stories.length !== 50 || paragraphs.length !== stories.length) throw new Err
 
 for (const [index, story] of stories.entries()) {
   const text = paragraphs[index];
-  if (!Array.isArray(text) || text.length < 5 || text.some(paragraph => typeof paragraph !== 'string' || paragraph.length < 40)) {
+  if (!Array.isArray(text) || text.length < 5 || text.some(paragraph => typeof paragraph !== 'string' || paragraph.length === 0) || text.join(' ').trim().split(/\s+/).length < 80) {
     throw new Error(`Texto incompleto na história ${index + 1}.`);
   }
   story.content = text.map(paragraph => ({ paragraph }));
   story.wordCount = text.join(' ').trim().split(/\s+/).length;
-  story.estimatedReadingTime = Math.max(1, Math.ceil(story.wordCount / 45));
+  story.estimatedReadingTime = Math.max(1, Math.ceil(story.wordCount / 130));
   story.synopsis = text[0];
   const titleTags = story.title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().split(/[^a-z0-9]+/).filter(word => word.length > 3 && !['que', 'para', 'com', 'uma', 'dos', 'das', 'onde'].includes(word));
   story.tags = [...new Set([story.category.toLowerCase(), ...titleTags])].slice(0, 6);
@@ -23,3 +23,4 @@ for (const [index, story] of stories.entries()) {
 
 fs.writeFileSync(file, `${JSON.stringify(stories, null, 2)}\n`, 'utf8');
 console.log(`Atualizadas ${stories.length} histórias originais; ${stories.reduce((n, story) => n + story.wordCount, 0)} palavras.`);
+
