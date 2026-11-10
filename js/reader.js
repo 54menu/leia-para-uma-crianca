@@ -7,6 +7,7 @@ import * as stories from './stories.js';
 
 let currentStory = null;
 let onNavigate = null;
+let resettingScroll = false;
 
 function init(navigateCallback) {
   onNavigate = navigateCallback;
@@ -70,16 +71,13 @@ function renderStory(story) {
 
   updateReadingProgress();
 
-  // Restore reading position after a short delay
-  setTimeout(() => {
-    const pos = favorites.getReadingPosition(story.id);
-    if (pos > 0) {
-      const scrollTarget = document.documentElement.scrollHeight * pos;
-      window.scrollTo({ top: scrollTarget, behavior: 'auto' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'auto' });
-    }
-  }, 100);
+  // Every story opens at its beginning, regardless of a saved position.
+  resettingScroll = true;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    updateReadingProgress();
+    resettingScroll = false;
+  }));
 }
 
 function showIllustrationPlaceholder(container) {
@@ -146,6 +144,7 @@ function getCurrentStory() {
 
 // Track scroll position periodically
 function trackScrollPosition() {
+  if (resettingScroll) return;
   if (!currentStory) return;
   if (!document.getElementById('pageReader')?.classList.contains('active')) return;
   const scrollTop = window.scrollY;

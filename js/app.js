@@ -208,8 +208,8 @@ function renderStoryCards(containerId, stories) {
 function navigateToStory(storyId) {
   const story = storiesModule.getStoryById(storyId);
   if (!story) return;
-  reader.renderStory(story);
   showPage('reader');
+  reader.renderStory(story);
 }
 
 function toggleMusicPanel() {
@@ -291,3 +291,4 @@ function toggleFontPanel() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
