@@ -141,6 +141,56 @@
   border-top: 1px solid var(--border-color);
 }
 
+/* ---------- Subtle reading position indicator ---------- */
+.reading-progress {
+  position: fixed;
+  z-index: 20;
+  top: calc(var(--header-height) + 18px);
+  right: max(10px, calc((100vw - 1200px) / 2 + 10px));
+  width: 3px;
+  height: min(42vh, 320px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.reading-progress.is-visible {
+  opacity: 0.55;
+}
+
+.reading-progress-track,
+.reading-progress-thumb {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  border-radius: 999px;
+}
+
+.reading-progress-track {
+  inset: 0;
+  background: var(--border-color);
+}
+
+.reading-progress-thumb {
+  background: var(--accent);
+  transition: top 100ms linear, height 180ms ease;
+}
+
+@media (max-width: 768px) {
+  .reading-progress {
+    right: 5px;
+    width: 2px;
+    height: 32vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress,
+  .reading-progress-thumb {
+    transition: none;
+  }
+}
+
 /* ---------- Favorite Button Active ---------- */
 .btn-fav-active svg {
   fill: #e74c6f;
@@ -174,4 +224,5 @@
     font-size: 2.6em;
   }
 }
+
 

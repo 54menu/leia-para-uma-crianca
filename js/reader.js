@@ -68,6 +68,8 @@ function renderStory(story) {
   // Navigation buttons
   updateNavButtons();
 
+  updateReadingProgress();
+
   // Restore reading position after a short delay
   setTimeout(() => {
     const pos = favorites.getReadingPosition(story.id);
@@ -148,14 +150,36 @@ function trackScrollPosition() {
   if (!document.getElementById('pageReader')?.classList.contains('active')) return;
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  updateReadingProgress();
   if (docHeight > 0) {
     const percent = scrollTop / docHeight;
     favorites.saveReadingPosition(currentStory.id, percent);
   }
 }
 
+function updateReadingProgress() {
+  const progress = document.getElementById('readingProgress');
+  const thumb = document.getElementById('readingProgressThumb');
+  if (!progress || !thumb) return;
+
+  const readerActive = document.getElementById('pageReader')?.classList.contains('active');
+  const scrollHeight = document.documentElement.scrollHeight;
+  const viewportHeight = window.innerHeight;
+  const scrollableHeight = Math.max(0, scrollHeight - viewportHeight);
+  const hasScroll = scrollableHeight > 8;
+  progress.classList.toggle('is-visible', Boolean(readerActive && hasScroll));
+  progress.setAttribute('aria-hidden', String(!(readerActive && hasScroll)));
+
+  const thumbHeight = hasScroll ? Math.max(7, Math.min(100, viewportHeight / scrollHeight * 100)) : 100;
+  const travel = 100 - thumbHeight;
+  const top = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * travel : 0;
+  thumb.style.height = `${thumbHeight}%`;
+  thumb.style.top = `${Math.min(travel, Math.max(0, top))}%`;
+}
+
 export {
   init, renderStory, toggleCurrentFavorite, goToNextStory, goToPrevStory,
   getCurrentStory, trackScrollPosition
 };
+
 
