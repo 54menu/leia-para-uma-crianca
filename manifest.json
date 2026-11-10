@@ -1,0 +1,14 @@
+{
+  "name": "Leia para uma Criança",
+  "short_name": "Leia Criança",
+  "description": "Biblioteca digital de histórias infantis para leitura em família.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101827",
+  "theme_color": "#101827",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "assets/icons/book-moon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

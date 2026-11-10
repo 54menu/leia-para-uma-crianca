@@ -1,0 +1,177 @@
+/* ============================================
+   LEIA PARA UMA CRIANÇA — Reader Styles
+   ============================================ */
+
+/* ---------- Reader Header ---------- */
+.reader-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reader-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ---------- Font Panel ---------- */
+.font-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.font-panel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.font-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.font-control label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ---------- Reader Content ---------- */
+.reader-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.reader-illustration {
+  margin-bottom: 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.reader-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--bg-secondary);
+}
+
+.reader-illustration-placeholder {
+  width: 100%;
+  aspect-ratio: 3/2;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-surface));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  letter-spacing: 0.04em;
+}
+
+.reader-illustration-placeholder::before {
+  content: '✦　☾　✧';
+  display: block;
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.reader-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.reader-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.25;
+  margin-bottom: 28px;
+}
+
+.reader-text {
+  font-family: var(--font-body);
+  font-size: var(--reader-font-size);
+  line-height: var(--reader-line-height);
+  color: var(--text-primary);
+}
+
+.reader-text p {
+  margin-bottom: 1.2em;
+  text-indent: 1.5em;
+}
+
+.reader-text p:first-child {
+  text-indent: 0;
+}
+
+.reader-text p:first-child::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 8px;
+  margin-top: 4px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---------- Reader Navigation ---------- */
+.reader-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 680px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ---------- Favorite Button Active ---------- */
+.btn-fav-active svg {
+  fill: #e74c6f;
+  stroke: #e74c6f;
+}
+
+/* ---------- Responsive Reader ---------- */
+@media (max-width: 768px) {
+  .reader-content {
+    max-width: 100%;
+  }
+
+  .reader-text {
+    font-size: calc(var(--reader-font-size) * 0.95);
+  }
+
+  .reader-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .font-control {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reader-text p:first-child::first-letter {
+    font-size: 2.6em;
+  }
+}
+

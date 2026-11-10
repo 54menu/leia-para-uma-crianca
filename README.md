@@ -40,4 +40,3 @@ Adicione arquivos WebP em `assets/illustrations/story-001.webp` até `story-050.
 ## Créditos e privacidade
 
 Textos escritos para este projeto. Não há cadastro, anúncios, servidor de aplicação nem coleta de dados pessoais. Favoritos, histórico, preferências e progresso ficam no armazenamento local do navegador.
-
