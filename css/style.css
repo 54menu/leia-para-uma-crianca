@@ -348,6 +348,16 @@ a {
   margin-bottom: 40px;
 }
 
+.category-section-global {
+  max-width: 1200px;
+  margin: 0 auto 8px;
+  padding: 24px 16px 0;
+}
+
+.category-section-global .section-title {
+  margin-bottom: 14px;
+}
+
 .section-title {
   font-family: var(--font-serif);
   font-size: 1.4rem;

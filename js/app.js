@@ -108,6 +108,8 @@ function bindEvents() {
 
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const categorySection = document.getElementById('categorySection');
+  if (categorySection) categorySection.hidden = page === 'reader';
   if (page === 'home') {
     document.getElementById('pageHome').classList.add('active');
     renderHome();
