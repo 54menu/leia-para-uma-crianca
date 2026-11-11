@@ -29,13 +29,11 @@ Os caminhos de dados, imagens e scripts são relativos ao diretório do projeto,
 - Reprodutor único com seleção de trilha, volume, repetição e temporizador com redução gradual.
 - PWA com cache do aplicativo e das histórias, indicador offline e carregamento sob demanda.
 
-## Recursos pendentes
+## Ilustrações e áudio
 
-A sessão de criação de imagens não estava disponível ao preparar este projeto. Portanto, as 50 ilustrações exclusivas ainda não foram produzidas. Os cartões e o leitor identificam claramente os espaços de ilustração pendentes; não há imagens vazias disfarçadas como arte final.
+37 das 50 histórias já têm ilustrações: histórias 1–30 e 41–47. As ilustrações das histórias 31–40 e 48–50 ainda estão pendentes.
 
-Os cinco arquivos de áudio também ainda precisam ser adicionados com licença comprovada. O aplicativo mostra um aviso quando a reprodução é tentada e não carrega serviços externos de música.
-
-Adicione arquivos WebP em `assets/illustrations/story-001.webp` até `story-050.webp` e associe os caminhos em `data/stories.json`. Para música, adicione os MP3 licenciados em `audio/` com os nomes já definidos em `js/audio.js`.
+O reprodutor inclui cinco faixas em MP3 na pasta `audio/`. Os nomes e caminhos usados pelo site estão definidos em `js/audio.js`.
 
 ## Créditos e privacidade
 

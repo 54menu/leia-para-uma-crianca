@@ -5,11 +5,11 @@
 import * as storage from './storage.js';
 
 const tracks = [
-  { id: 0, name: 'Noite Tranquila', desc: 'Piano suave', file: 'audio/noite-tranquila.mp3', icon: '🌙' },
-  { id: 1, name: 'Chuva na Janela', desc: 'Chuva leve e piano', file: 'audio/chuva-na-janela.mp3', icon: '🌧️' },
-  { id: 2, name: 'Floresta dos Sonhos', desc: 'Sons naturais e ambient', file: 'audio/floresta-dos-sonhos.mp3', icon: '🌲' },
-  { id: 3, name: 'Caixinha de Música', desc: 'Melodia delicada', file: 'audio/caixinha-de-musica.mp3', icon: '🎵' },
-  { id: 4, name: 'Sono Profundo', desc: 'Ambient instrumental', file: 'audio/sono-profundo.mp3', icon: '💤' }
+  { id: 0, name: 'Noite Tranquila', desc: 'Piano suave', file: 'audio/01 - Noite Tranquila.mp3', icon: '🌙' },
+  { id: 1, name: 'Chuva na Janela', desc: 'Chuva leve e piano', file: 'audio/02 - Chuva na Janela.mp3', icon: '🌧️' },
+  { id: 2, name: 'Floresta dos Sonhos', desc: 'Sons naturais e ambient', file: 'audio/03 - Floresta dos Sonhos.mp3', icon: '🌲' },
+  { id: 3, name: 'Caixinha de Estrelas', desc: 'Melodia delicada', file: 'audio/04 - Caixinha de Estrelas.mp3', icon: '🎵' },
+  { id: 4, name: 'Sono Profundo', desc: 'Ambient instrumental', file: 'audio/05 - Sono Profundo.mp3', icon: '💤' }
 ];
 
 let audioElement = null;
