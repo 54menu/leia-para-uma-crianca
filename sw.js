@@ -1,10 +1,11 @@
-const VERSION = 'leia-v9';
+const VERSION = 'leia-v10';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const scopeUrl = new URL(self.registration.scope);
 const shellFiles = [
   './', 'index.html', '404.html', 'manifest.json',
   'assets/icons/book-moon.svg',
+  'assets/illustrations/tela_inicio.jpg',
   'css/style.css', 'css/components.css', 'css/reader.css',
   'js/app.js', 'js/stories.js', 'js/reader.js', 'js/audio.js',
   'js/favorites.js', 'js/preferences.js', 'js/storage.js',

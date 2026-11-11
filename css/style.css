@@ -268,8 +268,12 @@ a {
   box-shadow: var(--shadow-lg);
 }
 
-.hero-img-placeholder svg {
+.hero-img-placeholder img {
   display: block;
+  width: min(100%, 500px);
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 
 /* ---------- Buttons ---------- */
@@ -1068,10 +1072,9 @@ a {
     max-width: 100%;
   }
 
-  .hero-illustration svg {
+  .hero-img-placeholder img {
     width: 100%;
-    max-width: 320px;
-    height: auto;
+    max-width: 500px;
   }
 
   .logo-text {
