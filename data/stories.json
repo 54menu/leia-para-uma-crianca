@@ -87,7 +87,7 @@
         "paragraph": "Naquela noite, a raposa voltou ao seu lugar preferido. Não levou perguntas preparadas. Apenas se sentou, observou o céu e contou uma história baixinho. A Lua apareceu entre duas nuvens, iluminando a colina como sempre fazia. E Amora, pela primeira vez, não esperou que o silêncio terminasse. Descobriu que algumas conversas acontecem mesmo quando ninguém pronuncia uma palavra."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-001.jpg",
     "tags": [
       "aventuras mágicas",
       "raposa",
@@ -95,7 +95,7 @@
       "conversar"
     ],
     "wordCount": 837,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 2,
@@ -176,7 +176,7 @@
         "paragraph": "Na visita seguinte, Lia voltou ao lugar. A passagem continuava lá, mas o reino estava silencioso e protegido. Ela não precisou entrar. Ficou observando a água cair, sabendo que, atrás daquela cortina, um vale inteiro continuava vivendo em seu próprio ritmo."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-002.jpg",
     "tags": [
       "aventuras mágicas",
       "reino",
@@ -185,7 +185,7 @@
       "cachoeira"
     ],
     "wordCount": 797,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 3,
@@ -272,7 +272,7 @@
         "paragraph": "Naquela tarde, as nuvens passaram pela janela como sempre. Mas Marina notou uma pequena nuvem cinzenta atravessando o céu em direção a um campo distante. Ela sorriu. Não precisava contar a ninguém todos os detalhes. Algumas viagens continuavam dentro da gente, mesmo depois que os pés voltavam para o chão."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-003.jpg",
     "tags": [
       "aventuras mágicas",
       "menina",
@@ -281,7 +281,7 @@
       "nuvens"
     ],
     "wordCount": 822,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 4,
@@ -383,7 +383,7 @@
         "paragraph": "Tito também sorriu. Talvez um dia conseguisse soltar fogo. Talvez demorasse. Pela primeira vez, isso não parecia tão urgente. Havia muitas coisas para descobrir antes disso."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-004.jpg",
     "tags": [
       "aventuras mágicas",
       "pequeno",
@@ -393,7 +393,7 @@
       "fogo"
     ],
     "wordCount": 838,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 5,
@@ -486,7 +486,7 @@
         "paragraph": "Clara voltou para casa antes do amanhecer. Guardou o bilhete dentro de um livro e foi dormir. Na noite seguinte, olhou pela janela, mas não viu o trem. Mesmo assim, o céu parecia diferente. Ela reconheceu três estrelas formando o desenho do bilhete e imaginou que, em algum lugar acima das nuvens, o trem continuava sua viagem silenciosa."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-005.jpg",
     "tags": [
       "aventuras mágicas",
       "viagem",
@@ -494,7 +494,7 @@
       "estrelas"
     ],
     "wordCount": 824,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 6,
@@ -587,7 +587,7 @@
         "paragraph": "Marta não tentou explicar o que acontecera. Passou a visitar o campo algumas noites, mas nunca exigiu que o castelo aparecesse. Às vezes, via uma luz entre as árvores. Em outras, escutava uma música distante. E, quando o relógio da vila marcava meia-noite, ela imaginava que as salas do castelo estavam despertando uma a uma."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-006.jpg",
     "tags": [
       "aventuras mágicas",
       "castelo",
@@ -596,7 +596,7 @@
       "noite"
     ],
     "wordCount": 810,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 7,
@@ -686,7 +686,7 @@
         "paragraph": "Tomás guardou o mapa no tubo de madeira. Nos dias seguintes, continuou desenhando lugares em seu caderno, mas passou a pensar também nas estradas, nas pontes, nos rios e nas pessoas que poderiam viver ali. Descobriu que imaginar um lugar era apenas o começo. Dar forma a ele exigia cuidado, paciência e muitas pequenas decisões."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-007.jpg",
     "tags": [
       "aventuras mágicas",
       "mapa",
@@ -695,7 +695,7 @@
       "existem"
     ],
     "wordCount": 881,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 8,
@@ -803,7 +803,7 @@
         "paragraph": "A irmã observou o objeto, curiosa, mas não fez outras perguntas. Davi guardou a bússola no bolso. A ilha ainda podia ser vista, muito distante, entre duas nuvens. Ele sabia que não precisava correr atrás dela. Algumas descobertas ficavam mais fáceis de encontrar quando a gente aprendia a olhar com atenção."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-008.jpg",
     "tags": [
       "aventuras mágicas",
       "menino",
@@ -811,7 +811,7 @@
       "ilha"
     ],
     "wordCount": 880,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 9,
@@ -904,7 +904,7 @@
         "paragraph": "Nina voltou muitas vezes. Nem sempre encontrava páginas desaparecidas. Às vezes, apenas lia em silêncio. Mas, toda vez que abria um livro, lembrava que uma história não vive apenas nas palavras escritas. Também precisa de alguém disposto a percorrê-la, página por página, até descobrir o que existe do outro lado."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-009.jpg",
     "tags": [
       "aventuras mágicas",
       "biblioteca",
@@ -912,7 +912,7 @@
       "perdidas"
     ],
     "wordCount": 843,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 10,
@@ -999,7 +999,7 @@
         "paragraph": "Mesmo assim, havia água correndo, folhas novas e animais cuidando uns dos outros. A coruja fechou os olhos. O bosque estava vivo, e sua magia não precisava mais ficar guardada em uma única gota."
       }
     ],
-    "coverImage": null,
+    "coverImage": "assets/illustrations/story-010.jpg",
     "tags": [
       "aventuras mágicas",
       "ultimo",
@@ -1008,7 +1008,7 @@
       "bosque"
     ],
     "wordCount": 877,
-    "illustrationStatus": "pending"
+    "illustrationStatus": "generated"
   },
   {
     "id": 11,
@@ -5908,4 +5908,3 @@
     "illustrationStatus": "pending"
   }
 ]
-

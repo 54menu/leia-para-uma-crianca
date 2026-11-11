@@ -1,4 +1,4 @@
-const VERSION = 'leia-v4';
+const VERSION = 'leia-v5';
 const SHELL_CACHE = `${VERSION}-shell`;
 const CONTENT_CACHE = `${VERSION}-content`;
 const scopeUrl = new URL(self.registration.scope);
