@@ -74,7 +74,11 @@ function renderStory(story) {
   // Every story opens at its beginning, regardless of a saved position.
   resettingScroll = true;
   requestAnimationFrame(() => requestAnimationFrame(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    const root = document.documentElement;
+    const previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = previousBehavior;
     updateReadingProgress();
     resettingScroll = false;
   }));
@@ -180,5 +184,4 @@ export {
   init, renderStory, toggleCurrentFavorite, goToNextStory, goToPrevStory,
   getCurrentStory, trackScrollPosition
 };
-
 

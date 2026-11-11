@@ -12,6 +12,7 @@ let allStories = [];
 let currentFilter = {category: '', age: '', search: '', favoritesOnly: false};
 
 async function init() {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   await storiesModule.loadStories();
   allStories = storiesModule.getAllStories();
   
@@ -21,6 +22,7 @@ async function init() {
   
   bindEvents();
   renderHome();
+  scrollToPageStart();
   updateAudioUI();
   updateConnectivity();
   window.addEventListener('online', updateConnectivity);
@@ -115,6 +117,15 @@ function showPage(page) {
   } else if (page === 'reader') {
     document.getElementById('pageReader').classList.add('active');
   }
+  scrollToPageStart();
+}
+
+function scrollToPageStart() {
+  const root = document.documentElement;
+  const previousBehavior = root.style.scrollBehavior;
+  root.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  root.style.scrollBehavior = previousBehavior;
 }
 
 function renderHome() {
@@ -291,4 +302,3 @@ function toggleFontPanel() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
-
