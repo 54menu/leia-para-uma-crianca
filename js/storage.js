@@ -7,6 +7,7 @@ const STORAGE_KEY = 'leia-para-uma-crianca';
 const defaultData = {
   favorites: [],
   history: [],
+  completedStories: [],
   lastStory: null,
   readingPositions: {},
   theme: 'dark',
@@ -25,7 +26,7 @@ function load() {
     const data = JSON.parse(raw);
     if (!data || typeof data !== 'object' || Array.isArray(data)) return { ...defaultData };
     const result = { ...defaultData, ...data };
-    for (const key of ['favorites', 'history']) if (!Array.isArray(result[key])) result[key] = [];
+    for (const key of ['favorites', 'history', 'completedStories']) if (!Array.isArray(result[key])) result[key] = [];
     if (!result.readingPositions || typeof result.readingPositions !== 'object' || Array.isArray(result.readingPositions)) result.readingPositions = {};
     if (!['dark', 'light'].includes(result.theme)) result.theme = defaultData.theme;
     for (const key of ['fontSize', 'lineHeight', 'volume', 'preferredTrack']) {
@@ -66,4 +67,5 @@ function reset() {
 }
 
 export { load, save, get, set, reset, defaultData };
+
 

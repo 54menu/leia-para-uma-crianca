@@ -672,6 +672,30 @@ a {
 }
 
 /* ---------- Music Panel ---------- */
+.reading-love {
+  max-width: 680px;
+  margin: 24px auto 36px;
+  padding: 20px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  line-height: 1.6;
+}
+.reading-love p { margin-bottom: 6px; color: var(--accent); font-family: var(--font-serif); font-size: 1.25rem; }
+.reading-love strong { font-size: 1.6rem; }
+
+.sound-prompt[hidden] { display: none; }
+.sound-prompt { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 20px; }
+.sound-prompt-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.68); }
+.sound-prompt-card { position: relative; width: min(100%, 430px); padding: 30px; text-align: center; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.sound-prompt-card > span { color: var(--accent); font-size: 2rem; }
+.sound-prompt-card h2 { margin: 10px 0; font-family: var(--font-serif); color: var(--accent); }
+.sound-prompt-card p { margin-bottom: 22px; color: var(--text-secondary); line-height: 1.55; }
+.sound-prompt-card > div { display: flex; justify-content: center; align-items: center; gap: 10px; }
+
+/* ---------- Music Panel ---------- */
 .music-panel {
   position: fixed;
   top: 0;
@@ -1138,4 +1162,5 @@ a {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
 

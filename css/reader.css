@@ -130,6 +130,22 @@
   font-weight: 700;
 }
 
+.reader-ending {
+  margin: 2rem 0 0;
+  text-align: center;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.reader-complete-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 36px auto 0;
+}
+
 /* ---------- Reader Navigation ---------- */
 .reader-nav {
   display: flex;

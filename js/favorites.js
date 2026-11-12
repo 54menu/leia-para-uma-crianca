@@ -33,10 +33,22 @@ function addToHistory(storyId) {
   if (history.length > 20) history = history.slice(0, 20);
   storage.set('history', history);
   storage.set('lastStory', storyId);
+  storage.set('completedStories', (storage.get('completedStories') || []).filter(id => id !== storyId));
 }
 
 function getHistory() {
   return storage.get('history') || [];
+}
+
+function markStoryAsRead(storyId) {
+  const completed = storage.get('completedStories') || [];
+  if (!completed.includes(storyId)) completed.push(storyId);
+  storage.set('completedStories', completed);
+  storage.set('history', getHistory().filter(id => id !== storyId));
+}
+
+function getCompletedStories() {
+  return storage.get('completedStories') || [];
 }
 
 function getLastStory() {
@@ -56,7 +68,8 @@ function getReadingPosition(storyId) {
 
 export {
   getFavorites, isFavorite, toggleFavorite,
-  addToHistory, getHistory, getLastStory,
+  addToHistory, getHistory, getLastStory, markStoryAsRead, getCompletedStories,
   saveReadingPosition, getReadingPosition
 };
+
 

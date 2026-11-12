@@ -25,6 +25,8 @@ async function init() {
   scrollToPageStart();
   updateAudioUI();
   updateConnectivity();
+  updateStoriesReadCount();
+  if (!localStorage.getItem('leia-sound-prompt-shown')) document.getElementById('soundPrompt').hidden = false;
   window.addEventListener('online', updateConnectivity);
   window.addEventListener('offline', updateConnectivity);
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
@@ -66,6 +68,14 @@ function bindEvents() {
   });
   document.getElementById('btnPrevStory')?.addEventListener('click', () => reader.goToPrevStory());
   document.getElementById('btnNextStory')?.addEventListener('click', () => reader.goToNextStory());
+  document.getElementById('btnMarkStoryRead')?.addEventListener('click', () => {
+    const story = reader.markCurrentStoryAsRead();
+    if (!story) return;
+    currentFilter.category = story.category;
+    updateStoriesReadCount();
+    currentFilter.favoritesOnly = false;
+    showPage('library');
+  });
   document.getElementById('btnFontControls')?.addEventListener('click', toggleFontPanel);
   document.getElementById('btnFontDecrease')?.addEventListener('click', () => preferences.decreaseFontSize());
   document.getElementById('btnFontIncrease')?.addEventListener('click', () => preferences.increaseFontSize());
@@ -75,6 +85,15 @@ function bindEvents() {
   
   // Music
   document.getElementById('btnMusicNav')?.addEventListener('click', toggleMusicPanel);
+  document.getElementById('btnEnableSound')?.addEventListener('click', () => {
+    localStorage.setItem('leia-sound-prompt-shown', 'true');
+    document.getElementById('soundPrompt').hidden = true;
+    audio.play();
+  });
+  document.getElementById('btnSkipSound')?.addEventListener('click', () => {
+    localStorage.setItem('leia-sound-prompt-shown', 'true');
+    document.getElementById('soundPrompt').hidden = true;
+  });
   document.getElementById('btnCloseMusic')?.addEventListener('click', toggleMusicPanel);
   document.getElementById('musicPanelBackdrop')?.addEventListener('click', toggleMusicPanel);
   document.getElementById('miniPlayerExpand')?.addEventListener('click', toggleMusicPanel);
@@ -119,6 +138,7 @@ function showPage(page) {
   } else if (page === 'reader') {
     document.getElementById('pageReader').classList.add('active');
   }
+  document.getElementById('readingLove').hidden = page !== 'home';
   scrollToPageStart();
 }
 
@@ -131,6 +151,7 @@ function scrollToPageStart() {
 }
 
 function renderHome() {
+  document.getElementById('readingLove').hidden = false;
   // Continue
   const historyIds = favorites.getHistory();
   const continueStories = historyIds.slice(0,3).map(id => storiesModule.getStoryById(id)).filter(Boolean);
@@ -140,6 +161,7 @@ function renderHome() {
   // Tonight - random
   const random = storiesModule.getRandomStories(4);
   renderStoryCards('tonightCards', random);
+  updateStoriesReadCount();
   
   // Categories
   const grid = document.getElementById('categoriesGrid');
@@ -158,6 +180,11 @@ function renderHome() {
   }
 }
 
+function updateStoriesReadCount() {
+  const el = document.getElementById('storiesReadCount');
+  if (el) el.textContent = String(favorites.getCompletedStories().length);
+}
+
 function renderLibrary() {
   const results = storiesModule.filterStories({
     category: currentFilter.category,
@@ -170,6 +197,10 @@ function renderLibrary() {
   const sort = document.getElementById('sortStories')?.value || 'original';
   if (sort === 'title') results.sort((a, b) => a.title.localeCompare(b.title, 'pt-BR'));
   if (sort === 'duration') results.sort((a, b) => a.estimatedReadingTime - b.estimatedReadingTime);
+  if (currentFilter.category) {
+    const completed = new Set(favorites.getCompletedStories());
+    results.sort((a, b) => Number(completed.has(a.id)) - Number(completed.has(b.id)));
+  }
   document.getElementById('resultsCount').textContent = `${results.length} ${results.length === 1 ? 'história' : 'histórias'}${currentFilter.favoritesOnly ? ' favoritas' : ''}`;
   document.getElementById('btnShowFavorites')?.classList.toggle('active', currentFilter.favoritesOnly);
   const grid = document.getElementById('storyCardsGrid');
@@ -304,3 +335,4 @@ function toggleFontPanel() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+

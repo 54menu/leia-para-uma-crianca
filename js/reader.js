@@ -110,6 +110,12 @@ function toggleCurrentFavorite() {
   return added;
 }
 
+function markCurrentStoryAsRead() {
+  if (!currentStory) return null;
+  favorites.markStoryAsRead(currentStory.id);
+  return currentStory;
+}
+
 function updateNavButtons() {
   if (!currentStory) return;
 
@@ -181,7 +187,8 @@ function updateReadingProgress() {
 }
 
 export {
-  init, renderStory, toggleCurrentFavorite, goToNextStory, goToPrevStory,
+  init, renderStory, toggleCurrentFavorite, markCurrentStoryAsRead, goToNextStory, goToPrevStory,
   getCurrentStory, trackScrollPosition
 };
+
 

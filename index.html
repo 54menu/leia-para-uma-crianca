@@ -178,6 +178,10 @@
         </div>
         <h1 class="reader-title" id="readerTitle"></h1>
         <div class="reader-text" id="readerText"></div>
+        <p class="reader-ending" aria-label="Fim da história">FIM</p>
+        <div class="reader-complete-wrap">
+          <button class="btn btn-primary" id="btnMarkStoryRead">✓ Marcar história como lida</button>
+        </div>
       </article>
 
       <aside class="reading-progress" id="readingProgress" aria-label="Progresso da leitura" aria-hidden="true">
@@ -274,7 +278,22 @@
         </div>
       </div>
     </div>
+
+    <section class="home-section reading-love" id="readingLove" aria-live="polite">
+      <p><strong id="storiesReadCount">0</strong> histórias lidas</p>
+      <span>Que carinho é compartilhar cada história! A cada leitura, a imaginação de uma criança ganha novas asas. ✨</span>
+    </section>
   </main>
+
+  <div class="sound-prompt" id="soundPrompt" hidden>
+    <div class="sound-prompt-backdrop"></div>
+    <section class="sound-prompt-card" role="dialog" aria-modal="true" aria-labelledby="soundPromptTitle">
+      <span aria-hidden="true">♫</span>
+      <h2 id="soundPromptTitle">Uma trilha para este momento?</h2>
+      <p>Uma música suave pode deixar a leitura ainda mais aconchegante.</p>
+      <div><button class="btn btn-primary" id="btnEnableSound">Ativar som</button><button class="btn btn-ghost" id="btnSkipSound">Agora não</button></div>
+    </section>
+  </div>
 
   <!-- ===== MINI PLAYER ===== -->
   <div class="mini-player" id="miniPlayer" hidden>
@@ -300,4 +319,5 @@
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
+
 
